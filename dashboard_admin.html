@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tombol CRUD dengan Logo</title>
+    <!-- Memuat Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Menggunakan font Inter dari Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Logo di pojok kiri atas -->
+    <div class="absolute top-4 left-4">
+        <img src="img/bg-img/logo.png" alt="Logo Delicious Food Blog" class="h-12">
+    </div>
+
+    <!-- Kontainer utama untuk mengatur tata letak tombol di tengah -->
+ <div class="flex items-center justify-center min-h-screen">
+    <div class="bg-white rounded-xl shadow-2xl p-10 w-full max-w-md text-center space-y-6 animate-fade-in">
+      <h1 class="text-2xl font-bold text-gray-700">Kelola Resep</h1>
+      
+      <!-- Tombol Create -->
+      <a href="create.html"
+         class="flex items-center justify-center gap-2 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-semibold py-3 px-10 rounded-lg shadow-lg transition duration-300 transform hover:scale-105">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+             viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round"
+             stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+        CREATE
+      </a>
+
+      <!-- Tombol Update -->
+      <a href="update.html"
+         class="flex items-center justify-center gap-2 bg-gradient-to-r from-green-400 to-green-500 hover:from-green-500 hover:to-green-600 text-white font-semibold py-3 px-10 rounded-lg shadow-lg transition duration-300 transform hover:scale-105">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+             viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round"
+             stroke-linejoin="round" stroke-width="2" d="M11 5h6M11 9h6m-6 4h6m-6 4h6M5 5h.01M5 9h.01M5 13h.01M5 17h.01"/></svg>
+        UPDATE
+      </a>
+
+      <!-- Tombol Delete -->
+      <a href="delete.html"
+         class="flex items-center justify-center gap-2 bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-semibold py-3 px-10 rounded-lg shadow-lg transition duration-300 transform hover:scale-105">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+             viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round"
+             stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5-4h4m-4 0a1 1 0 00-1 1v1h6V4a1 1 0 00-1-1m-4 0h4"/></svg>
+        DELETE
+      </a>
+    </div>
+  </div>
+
+
+        </div>
+    </div>
+
+</body>
+</html>

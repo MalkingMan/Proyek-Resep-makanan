@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Menu Makanan</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+
+    .menu-container {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      width: 250px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card img.placeholder {
+      width: 100%;
+      height: 200px;
+      background: #eee;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #aaa;
+      font-size: 20px;
+    }
+
+    .card .info {
+      padding: 15px;
+    }
+
+    .stars {
+      color: goldenrod;
+      font-size: 18px;
+    }
+
+    .delete-icon {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+      opacity: 0.7;
+      transition: opacity 0.2s ease;
+    }
+
+    .delete-icon:hover {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 style="text-align: center;">Menu Makanan</h1>
+
+  <div class="menu-container">
+    <!-- Card Pizza -->
+    <div class="card" id="card-pizza">
+      <img src="img/food-img/Pizza.jpg" alt="Pizza" class="placeholder">
+      <img src="img/delete-icon.png" alt="Hapus" class="delete-icon" onclick="hapusMenu('card-pizza')">
+      <div class="info">
+        <h3>Italian Pizza</h3>
+        <div class="stars">★ ★ ★ ★ ☆</div>
+      </div>
+    </div>
+
+    <!-- Card Burger -->
+    <div class="card" id="card-burger">
+      <img src="img/food-img/Burger.jpg" alt="Burger" class="placeholder">
+      <img src="img/delete-icon.png" alt="Hapus" class="delete-icon" onclick="hapusMenu('card-burger')">
+      <div class="info">
+        <h3>Burger</h3>
+        <div class="stars">★ ★ ★ ★ ☆</div>
+      </div>
+    </div>
+
+    <!-- Card Kebab -->
+    <div class="card" id="card-kebab">
+      <img src="img/food-img/Kebab.jpg" alt="Kebab" class="placeholder">
+      <img src="img/delete-icon.png" alt="Hapus" class="delete-icon" onclick="hapusMenu('card-kebab')">
+      <div class="info">
+        <h3>Kebab Turkey</h3>
+        <div class="stars">★ ★ ★ ★ ☆</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function hapusMenu(id) {
+      const card = document.getElementById(id);
+      if (card) {
+        card.remove();
+      }
+    }
+  </script>
+
+</body>
+</html>
