@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Juru Masak - Delicious</title>
+    <!-- Memuat Font Poppins dari Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Poppins', sans-serif;
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            min-height: 100vh; 
+            background-color: #f4f7f6; 
+            margin: 0; 
+            padding: 20px;
+        }
+        
+        .container { 
+            background-color: white; 
+            padding: 40px; 
+            border-radius: 15px; 
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1); 
+            width: 100%;
+            max-width: 700px;
+            text-align: center;
+        }
+        h1 { 
+            color: #2c3e50; 
+            margin-bottom: 35px; 
+            font-size: 28px;
+            font-weight: 700;
+        }
+        .cook-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 35px;
+            font-size: 16px; /* Ukuran font lebih besar untuk keterbacaan */
+        }
+        .cook-table th, .cook-table td {
+            padding: 15px;
+            text-align: left;
+        }
+        .cook-table thead th {
+            background-color: #28a745; /* Header hijau sesuai tema */
+            color: white;
+            font-weight: 600;
+            border-bottom: 2px solid #218838;
+        }
+        /* Membuat sudut header tabel melengkung */
+        .cook-table thead th:first-child {
+            border-top-left-radius: 8px;
+        }
+        .cook-table thead th:last-child {
+            border-top-right-radius: 8px;
+        }
+
+        .cook-table tbody tr {
+            border-bottom: 1px solid #e9ecef;
+        }
+        /* Zebra-striping untuk baris tabel */
+        .cook-table tbody tr:nth-of-type(even) {
+            background-color: #f8f9fa;
+        }
+        .cook-table tbody tr:last-of-type {
+            border-bottom: none;
+        }
+        .cook-table tbody tr:hover {
+            background-color: #e9ecef;
+        }
+        
+        .nim-column {
+            text-align: right;
+            font-family: 'Menlo', 'Consolas', monospace;
+            color: #555;
+            font-weight: 500;
+        }
+
+        .back-btn {
+            display: inline-block;
+            background: #6c757d; /* Warna abu-abu netral */
+            color: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .back-btn:hover {
+            background-color: #5a6268;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Tim Juru Masak</h1>
+        <table class="cook-table">
+            <thead>
+                <tr>
+                    <th>Nama</th>
+                    <th class="nim-column">NIM</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>M. Array Al-khozini</td>
+                    <td class="nim-column">20230140208</td>
+                </tr>
+                <tr>
+                    <td>Sulthon Hanan Ahnaf</td>
+                    <td class="nim-column">20230140241</td>
+                </tr>
+                <tr>
+                    <td>Choirul Amir Siregar</td>
+                    <td class="nim-column">20230140249</td>
+                </tr>
+                <tr>
+                    <td>M. Gyan Hendriansyah</td>
+                    <td class="nim-column">20230140249</td>
+                </tr>
+                <tr>
+                    <td>M. Rafa Pramuditha</td>
+                    <td class="nim-column">20230140210</td>
+                </tr>
+                <tr>
+                    <td>Tegar Haikal Ramadhan</td>
+                    <td class="nim-column">20230140210</td>
+                </tr>
+            </tbody>
+        </table>
+        <a href="login_admin.html" class="back-btn">&larr; Kembali ke Halaman Login</a>
+    </div>
+</body>
+</html>

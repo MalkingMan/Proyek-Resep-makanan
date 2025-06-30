@@ -1,5 +1,5 @@
 <?php
-// Hentikan output sebelum header
+// Mulai output buffering di baris paling awal
 ob_start();
 
 // 1. Koneksi ke database
@@ -15,7 +15,7 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 
 // 3. Gunakan prepared statements
-$query = "SELECT * FROM users WHERE username = ?";
+$query = "SELECT * FROM admin WHERE username = ?";
 $stmt = mysqli_prepare($conn, $query);
 mysqli_stmt_bind_param($stmt, "s", $username);
 mysqli_stmt_execute($stmt);
@@ -23,21 +23,21 @@ $result = mysqli_stmt_get_result($stmt);
 
 // 4. Verifikasi hasil
 if ($user = mysqli_fetch_assoc($result)) {
-    if ($password === $user['password'])
- {
-        // Login berhasil: redirect
+    // Verifikasi password (Di contoh ini password tidak di-hash, seharusnya di-hash)
+    if ($password === $user['password']) {
+        // Login berhasil: tutup koneksi dan redirect ke dashboard
         mysqli_stmt_close($stmt);
         mysqli_close($conn);
         header("Location: dashboard_admin.html");
-        exit();
+        exit(); // <-- Penting
     }
 }
 
-// Jika login gagal
+// Jika kode sampai di sini, artinya login GAGAL.
+// Tutup koneksi dan redirect kembali ke halaman login.
 mysqli_stmt_close($stmt);
 mysqli_close($conn);
-echo "Username atau password salah!";
-
-// Tutup output buffer
-ob_end_flush();
+header("Location: login_admin.html?error=1");
+ob_end_flush(); // Kirim output buffer (jika ada)
+exit(); // <-- Penting
 ?>

@@ -1411,3 +1411,121 @@ textarea:focus {
     transform: translateY(-3px); /* Sedikit terangkat saat disentuh */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); /* Bayangan lebih jelas saat disentuh */
 }
+
+
+ 
+    /* CSS untuk Tombol Kembali ke Dashboard */
+    .back-to-dashboard-btn {
+        position: fixed;
+        bottom: 25px;
+        right: 25px;
+        background-color: #ffc107; /* Warna kuning */
+        color: #333; /* Teks gelap agar kontras */
+        padding: 10px 15px;
+        border-radius: 50px; /* Bentuk pil */
+        text-decoration: none;
+        font-weight: 600;
+        font-family: 'Poppins', sans-serif;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        z-index: 100;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .back-to-dashboard-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    }
+    /* Menghilangkan tautan kembali di bawah form yang lama */
+    .back-link {
+        display: none;
+    }
+
+ 
+        .recipe-card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+        .recipe-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+        }
+        .recipe-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .recipe-card-content {
+            padding: 15px;
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .recipe-card h5 {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        .edit-btn {
+            background-color: #40ba37; /* Warna hijau */
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+        .edit-btn:hover {
+            background-color: #1c8314; /* Warna hijau tua */
+            color: white;
+        }
+        .back-btn { display: block; text-align:center; margin-top: 40px; color: #1c8314; font-weight: bold; }
+
+
+ .recipe-card-container { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; }
+        .recipe-card { border: 1px solid #ddd; border-radius: 8px; overflow: hidden; width: 300px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); display: flex; flex-direction: column; }
+        .recipe-card img { width: 100%; height: 200px; object-fit: cover; }
+        .recipe-card-content { padding: 15px; text-align: center; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
+        .recipe-card h5 { margin-bottom: 15px; font-size: 18px; }
+        .delete-btn { background-color: #d9534f; color: white; padding: 10px 15px; border-radius: 5px; text-decoration: none; border: none; cursor: pointer; width: 100%; font-weight: bold; transition: background-color 0.3s; }
+        .delete-btn:hover { background-color: #c9302c; }
+        .back-btn { display: block; text-align:center; margin-top: 40px; color: #c9302c; font-weight: bold; }
+        .success-message { padding: 15px; background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; border-radius: 5px; margin-bottom: 20px; text-align: center; }
+
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; background: #f3fff2; color: #333; }
+    header { background: #40ba37; padding: 25px 20px; color: white; text-align: center; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); }
+    header h1 { font-size: 26px; font-weight: 600; }
+    .container { max-width: 900px; margin: 30px auto; padding: 25px; background: #ffffff; border-radius: 12px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); }
+    h2 { color: #1c8314; margin-bottom: 25px; }
+    .form-group { margin-bottom: 20px; }
+    label { font-weight: 600; display: block; margin-bottom: 8px; }
+    input, textarea, select { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; font-family: 'Poppins', sans-serif; }
+    .form-row { display: flex; gap: 20px; }
+    .form-row .form-group { flex: 1; }
+    button { background: #1c8314; color: white; padding: 12px 25px; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 0 #15660f; transition: all 0.1s ease-in-out; font-size: 16px; }
+    button:hover { background-color: #159d08; }
+    button:active { box-shadow: none; transform: translateY(4px); }
+
+ .back-btn {
+        display: block;
+        text-align: center;
+        margin-top: 30px;
+        text-decoration: none;
+        color: #1c8314;
+        font-weight: 600;
+        font-family: 'Poppins', sans-serif;
+    }
+    .back-btn:hover {
+        text-decoration: underline;
+    }

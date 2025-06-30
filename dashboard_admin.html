@@ -3,59 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tombol CRUD dengan Logo</title>
-    <!-- Memuat Tailwind CSS -->
+    <title>Dashboard Admin - Delicious</title>
+    <!-- Memuat Tailwind CSS dari CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Menggunakan font Inter dari Google Fonts */
+        /* Menggunakan font Inter dari Google Fonts untuk tampilan yang modern */
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
         body {
             font-family: 'Inter', sans-serif;
+        }
+        /* Animasi sederhana untuk fade-in */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.5s ease-out forwards;
         }
     </style>
 </head>
 <body class="bg-gray-100">
 
-    <!-- Logo di pojok kiri atas -->
+    <!-- Logo di pojok kiri atas, bisa diklik untuk kembali ke halaman utama -->
     <div class="absolute top-4 left-4">
-        <img src="img/bg-img/logo.png" alt="Logo Delicious Food Blog" class="h-12">
+        <a href="index.php">
+            <img src="img/core-img/logo.png" alt="Logo Delicious Food Blog" class="h-12 transition-transform duration-300 hover:scale-110">
+        </a>
+    </div>
+    
+    <!-- Tombol Logout di pojok kanan atas -->
+    <div class="absolute top-4 right-4">
+        <a href="login_admin.html" class="flex items-center justify-center gap-2 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300 transform hover:scale-105">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+            </svg>
+            <span>Logout</span>
+        </a>
     </div>
 
-    <!-- Kontainer utama untuk mengatur tata letak tombol di tengah -->
- <div class="flex items-center justify-center min-h-screen">
-    <div class="bg-white rounded-xl shadow-2xl p-10 w-full max-w-md text-center space-y-6 animate-fade-in">
-      <h1 class="text-2xl font-bold text-gray-700">Kelola Resep</h1>
-      
-      <!-- Tombol Create -->
-      <a href="create.html"
-         class="flex items-center justify-center gap-2 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-semibold py-3 px-10 rounded-lg shadow-lg transition duration-300 transform hover:scale-105">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
-             viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round"
-             stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
-        CREATE
-      </a>
+    <!-- Kontainer utama untuk mengatur tata letak tombol di tengah layar -->
+    <div class="flex items-center justify-center min-h-screen">
+        <div class="bg-white rounded-xl shadow-2xl p-10 w-full max-w-md text-center space-y-6 animate-fade-in">
+            <h1 class="text-3xl font-bold text-gray-800">Kelola Resep</h1>
+            <p class="text-gray-500">Pilih salah satu menu di bawah ini untuk mengelola resep makanan.</p>
+            
+            <!-- Tombol Create -->
+            <a href="create.php"
+               class="flex items-center justify-center gap-3 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-semibold py-3 px-10 rounded-lg shadow-lg transition duration-300 transform hover:scale-105">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                </svg>
+                <span>CREATE</span>
+            </a>
 
-      <!-- Tombol Update -->
-      <a href="update.html"
-         class="flex items-center justify-center gap-2 bg-gradient-to-r from-green-400 to-green-500 hover:from-green-500 hover:to-green-600 text-white font-semibold py-3 px-10 rounded-lg shadow-lg transition duration-300 transform hover:scale-105">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
-             viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round"
-             stroke-linejoin="round" stroke-width="2" d="M11 5h6M11 9h6m-6 4h6m-6 4h6M5 5h.01M5 9h.01M5 13h.01M5 17h.01"/></svg>
-        UPDATE
-      </a>
+            <!-- Tombol Update -->
+            <a href="update.php"
+               class="flex items-center justify-center gap-3 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold py-3 px-10 rounded-lg shadow-lg transition duration-300 transform hover:scale-105">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                </svg>
+                <span>UPDATE</span>
+            </a>
 
-      <!-- Tombol Delete -->
-      <a href="delete.html"
-         class="flex items-center justify-center gap-2 bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-semibold py-3 px-10 rounded-lg shadow-lg transition duration-300 transform hover:scale-105">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
-             viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round"
-             stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5-4h4m-4 0a1 1 0 00-1 1v1h6V4a1 1 0 00-1-1m-4 0h4"/></svg>
-        DELETE
-      </a>
-    </div>
-  </div>
+            <!-- Tombol Delete -->
+            <a href="delete.php"
+               class="flex items-center justify-center gap-3 bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-semibold py-3 px-10 rounded-lg shadow-lg transition duration-300 transform hover:scale-105">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5-4h4m-4 0a1 1 0 00-1 1v1h6V4a1 1 0 00-1-1m-4 0h4" />
+                </svg>
+                <span>DELETE</span>
+            </a>
 
-
+         <a href="index.php"
+               class="flex items-center justify-center gap-3 bg-gradient-to-r from-green-700 to-green-800 hover:from-green-800 hover:to-green-900 text-white font-semibold py-3 px-10 rounded-lg shadow-lg transition duration-300 transform hover:scale-105">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                </svg>
+                <span>HOME</span>
+            </a>
         </div>
     </div>
 
